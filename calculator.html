@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="src/css/bootstrap.css">
+<script src="src/js/bootstrap.js"></script>
+
+
+<style>
+  .a {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: black;
+    height: 400px;
+    width: 300px;
+    padding: 2px;
+    padding-left: 15px;
+
+  }
+
+  .display {
+    margin-left: 5px;
+    width: 235px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: -8px -8px 15px rgb(106, 9, 9);
+  }
+
+  .btn {
+    height: auto;
+    width: 45px;
+    box-shadow: -8px -8px 15px rgb(201, 5, 5);
+    cursor: pointer;
+  }
+</style>
+<div class="a rounded-3">
+  <div class="container-fluid table">
+    <div id="xy">
+      <input type="text" class="display form-control text-danger" id="disp" />
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div onclick="ab('c')" class="btn btn-danger 
+                m-2 w-25 col-3">clear</div>
+
+        <div onclick="add()" class=" 
+                m-2 w-25 col-3 act"></div>
+
+        <div onclick="abcd()" class="btn btn-danger
+                m-2 w-25 col-3">del</div>
+        <br>
+        <div onclick="ab('1')" class="btn btn-danger text-danger m-2 col-4">1</div>
+        <div onclick="ab('2')" class="btn btn-danger text-danger m-2 col-4">2</div>
+        <div onclick="ab('3')" class="btn btn-danger text-danger m-2 col-4">3</div>
+        <div onclick="ab('+')" class="btn btn-danger text-white m-2 col-4">+</div>
+        <br>
+        <div onclick="ab('4')" class="btn btn-danger text-danger m-2">4</div>
+        <div onclick="ab('5')" class="btn btn-danger text-danger m-2">5</div>
+        <div onclick="ab('6')" class="btn btn-danger text-danger m-2">6</div>
+        <div onclick="ab('-')" class="btn btn-danger text-white m-2">-</div>
+        <br>
+        <div onclick="ab('7')" class="btn btn-danger text-danger m-2">7</div>
+        <div onclick="ab('8')" class="btn btn-danger text-danger m-2">8</div>
+        <div onclick="ab('9')" class="btn btn-danger text-danger m-2">9</div>
+        <div onclick="ab('*')" class="btn btn-danger text-white m-2">*</div>
+        <br>
+        <div onclick="ab('.')" class="btn btn-danger text-white m-2">.</div>
+        <div onclick="ab('0')" class="btn btn-danger text-danger m-2">0</div>
+        <div onclick="ab('/')" class="btn btn-danger text-white m-2">/</div>
+        <div onclick="ab('=')" class="btn btn-danger text-white m-2">=</div>
+
+
+      </div>
+    </div>
+
+
+    <script>
+      var x1 = document.getElementById("disp");
+      
+      function ab(x) {
+        if (x == 'c') {
+          x1.value = ''
+        }
+        else if (x == '=') {
+          x1.value = eval(x1.value)
+        }
+
+        else {
+          x1.value += x
+        }
+      }
+
+      function abcd() {
+        x1.value = x1.value.slice(0, -1);
+      }
+
+
+    </script>
